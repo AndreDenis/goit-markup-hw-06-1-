@@ -373,8 +373,8 @@ address {
   color: var(--white-txt-color);
   background-color: var(--accent-txt-color);
 
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  background-color: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn:hover,
@@ -639,7 +639,7 @@ address {
 .gallery-link {
   display: block;
 
-  transform: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .gallery-link:hover,
@@ -669,7 +669,7 @@ address {
   padding: 63px 24px;
   background-color: rgba(33, 150, 243, 0.9);
 
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .gallery-link:hover .overlay,
@@ -829,6 +829,11 @@ label {
   margin-bottom: 10px;
 }
 
+.register-form-textarea {
+  position: relative;
+  display: block;
+}
+
 .register-form-label {
   display: block;
   font-size: 12px;
@@ -849,6 +854,17 @@ label {
 
 .register-form-input:focus {
   border-color: var(--accent-txt-color);
+}
+
+.register-form-icon {
+  position: absolute;
+  left: 15px;
+  bottom: 14px;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.register-form-input:focus + .register-form-icon {
+  fill: var(--accent-txt-color);
 }
 
 .register-form-agreement {
@@ -888,17 +904,6 @@ label {
   line-height: 24px;
   color: #757575;
   user-select: none;
-}
-
-.register-form-icon {
-  position: absolute;
-  left: 15px;
-  bottom: 14px;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.register-form-input:focus + .register-form-icon {
-  fill: var(--accent-txt-color);
 }
 
 .register-form-heading {
